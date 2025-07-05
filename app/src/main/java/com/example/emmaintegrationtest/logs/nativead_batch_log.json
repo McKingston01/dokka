@@ -1,0 +1,71 @@
+{
+  "operations": [
+    {
+      "id": "338259d2-9e92-436c-89f3-b2b6a5e46f32",
+      "type": "native_ad",
+      "action": "check",
+      "response": {
+        "status": "200",
+        "native_ads": [
+          {
+            "campaign_id": 32577,
+            "cta": null,
+            "show_on": 0,
+            "can_close": "1",
+            "params": null,
+            "times": 0,
+            "tag": null,
+            "id": "nativead-batch",
+            "fields": [
+              {
+                "type": "container",
+                "subtype": "container",
+                "value": "",
+                "content": [
+                  [
+                    {
+                      "name": "Title",
+                      "type": "text",
+                      "subtype": "title",
+                      "custom": false,
+                      "mandatory": true,
+                      "value": "\u00a1Hola! Este es un anuncio dentro de un batch"
+                    },
+                    {
+                      "name": "Body",
+                      "type": "text",
+                      "subtype": "body",
+                      "custom": false,
+                      "mandatory": true,
+                      "value": "Este es el cuerpo de un anuncio dentro de un batch"
+                    }
+                  ],
+                  [
+                    {
+                      "name": "Title",
+                      "type": "text",
+                      "subtype": "title",
+                      "custom": false,
+                      "mandatory": true,
+                      "value": "\u00a1Hola! Este es un anuncio dentro de un batch"
+                    },
+                    {
+                      "name": "Body",
+                      "type": "text",
+                      "subtype": "body",
+                      "custom": false,
+                      "mandatory": true,
+                      "value": "Este es el cuerpo de un anuncio dentro de un batch"
+                    }
+                  ]
+                ],
+                "name": "container"
+              }
+            ]
+          }
+        ],
+        "error": "0"
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "operations": [
+    {
+      "id": "68ae3a75-29b0-4691-b709-cfd405732fc4",
+      "type": "coupon",
+      "action": "check",
+      "response": {
+        "status": "200",
+        "response": [
+          {
+            "ID": 8285,
+            "TITLE": "cupon-test-2",
+            "DESCRIPTION": "Cup\u00f3n de descuento de primavera. Ven a nuestro local y elimina el IVA de los productos primaverales.",
+            "OFFER_CODE": "TEST-PRIMAVERA25",
+            "IMAGE_URL": "https://multimedia.emma.io/image/62781_1745406402.png",
+            "MAX_REDEEM": 1,
+            "FILTER_INFO": "",
+            "BEGIN": "2025-04-23 13:10:00",
+            "END": "2025-05-23 00:00:00",
+            "times": 0,
+            "type": "coupon",
+            "params": null,
+            "CURRENT_REDEEMS": 0
+          },
+          {
+            "ID": 8282,
+            "TITLE": "cupon-test",
+            "DESCRIPTION": "Esta es una prueba de cup\u00f3n",
+            "OFFER_CODE": "cupon1",
+            "IMAGE_URL": "https://multimedia.emma.io/image/62694_1744887184.png",
+            "MAX_REDEEM": 1,
+            "FILTER_INFO": "",
+            "BEGIN": "2025-04-17 12:55:00",
+            "END": "2025-05-17 00:00:00",
+            "times": 0,
+            "type": "coupon",
+            "params": null,
+            "CURRENT_REDEEMS": 0
+          }
+        ],
+        "error": "0"
+      }
+    }
+  ]
+}

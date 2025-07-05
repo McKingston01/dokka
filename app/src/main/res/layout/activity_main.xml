@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vista"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="40dp"
+    android:gravity="center_horizontal|center_vertical">
+
+    <TextView
+        android:id="@+id/textview_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Bienvenido/a EMMA Integration Test"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:id="@+id/textview_subtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_titulo"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Integración de SDK en Android nativo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <Button
+        android:id="@+id/button_registro"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_subtitulo"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="24dp"
+        android:text="Registrar usuario" />
+
+    <Button
+        android:id="@+id/button_login"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_registro"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        android:text="Login usuario" />
+
+    <Button
+        android:id="@+id/button_compra"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_login"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        android:text="Comprar" />
+
+    <Button
+        android:id="@+id/button_cancelar_compra"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_login"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        android:layout_toEndOf="@id/button_compra"
+        android:text="Cancelar compra" />
+
+    <Button
+        android:id="@+id/button_mostrar_nativead"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_compra"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        android:text="Recibir NativeAd" />
+
+    <Button
+        android:id="@+id/button_mostrar_nativead_batch"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_cancelar_compra"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        android:layout_toEndOf="@id/button_mostrar_nativead"
+        android:text="Recibir NativeAd Batch" />
+
+    <Button
+        android:id="@+id/button_mostrar_starview"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_mostrar_nativead"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        android:text="Recibir starview" />
+
+    <Button
+        android:id="@+id/button_mostrar_adball"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_mostrar_nativead_batch"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        android:layout_toEndOf="@id/button_mostrar_starview"
+        android:text="Recibir adball" />
+
+    <Button
+        android:id="@+id/button_mostrar_banner"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_mostrar_starview"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        android:text="Recibir banner" />
+
+    <Button
+        android:id="@+id/button_mostrar_strip"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_mostrar_starview"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        android:layout_toEndOf="@id/button_mostrar_banner"
+        android:text="Recibir strip" />
+
+    <RelativeLayout
+        android:id="@+id/nativead_container"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/button_mostrar_banner"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="#2196F3"
+        android:gravity="center_horizontal|center_vertical" />
+
+</RelativeLayout>

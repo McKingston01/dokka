@@ -1,0 +1,52 @@
+{
+  "operations": [
+    {
+      "id": "298bf1fc-7ae5-4c5f-a802-cf0d390510e0",
+      "type": "native_ad",
+      "action": "check",
+      "response": {
+        "status": "200",
+        "native_ad": {
+          "campaign_id": 32558,
+          "cta": null,
+          "show_on": 1,
+          "can_close": "1",
+          "params": {
+            "msg_id": "nativead-test-android",
+            "type": "native_ad"
+          },
+          "times": 0,
+          "tag": null,
+          "id": "plantilla-nativead-android",
+          "fields": [
+            {
+              "name": "Title",
+              "type": "text",
+              "subtype": "title",
+              "custom": false,
+              "mandatory": true,
+              "value": "Este es el t\u00edtulo de la plantilla de los nativead"
+            },
+            {
+              "name": "Body",
+              "type": "text",
+              "subtype": "body",
+              "custom": false,
+              "mandatory": true,
+              "value": "Este es el cuerpo de la plantilla de los native ad"
+            }
+          ]
+        },
+        "error": "0"
+      }
+    },
+    {
+      "id": "42ffa052-ed1f-40d0-8ae1-4fbf4bd4ca76",
+      "type": "event",
+      "action": "none",
+      "response": {
+        "status": "216"
+      }
+    }
+  ]
+}

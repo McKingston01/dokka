@@ -1,20 +1,26 @@
-name: Deploy Dokka Docs
+name: Deploy Dokka Documentation
 
 on:
   push:
     branches: [ main ]
 
 permissions:
+  contents: write
   pages: write
-  contents: read
+  id-token: write
 
 jobs:
-  build-and-deploy:
+  deploy-docs:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          fetch-depth: 0
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -23,19 +29,27 @@ jobs:
           distribution: temurin
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v2
+        uses: android-actions/setup-android@v3
 
-      - name: Create local.properties
-        run: echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+      - name: Configure Android environment
+        run: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+          chmod +x ./gradlew
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
+      - name: Generate Dokka documentation
+        run: ./gradlew dokkaGenerate --stacktrace --info
 
-      - name: Generate Dokka docs
-        run: ./gradlew dokkaGenerate
+      - name: Verify documentation
+        run: |
+          [ -d docs/dokka ] || (echo "ERROR: Docs directory missing" && exit 1)
+          [ -f docs/dokka/index.html ] || (echo "ERROR: Index file missing" && exit 1)
 
-      - name: Publish to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          BRANCH: gh-pages
-          FOLDER: docs/dokka
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/dokka
+          force_orphan: true
+          keep_files: false
+          commit_message: "docs: Update documentation via GitHub Actions"

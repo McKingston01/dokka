@@ -92,7 +92,7 @@ dependencies {
 }
 
 dokka {
-    moduleName.set("EMMA Integration Test")
+    moduleName.set("EMMA Developer")
 
     dokkaPublications {
         html {
@@ -117,7 +117,6 @@ dokka {
 
     pluginsConfiguration.html {
         footerMessage.set("2025 © EMMA by Arkana Apps")
-        customAssets.from("../docs/assets/emma-logo.png")
         customStyleSheets.from(
             "../docs/assets/style.css",
             "../docs/assets/logo-styles.css"

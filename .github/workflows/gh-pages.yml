@@ -41,15 +41,15 @@ jobs:
 
       - name: Verify documentation
         run: |
-          [ -d docs/dokka ] || (echo "ERROR: Docs directory missing" && exit 1)
-          [ -f docs/dokka/index.html ] || (echo "ERROR: Index file missing" && exit 1)
+          [ -d build/dokka/output ] || (echo "ERROR: Docs directory missing" && exit 1)
+          [ -f build/dokka/output/index.html ] || (echo "ERROR: Index file missing" && exit 1)
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/dokka
+          publish_dir: build/dokka/output
           force_orphan: true
           keep_files: false
           commit_message: "docs: Update documentation via GitHub Actions"

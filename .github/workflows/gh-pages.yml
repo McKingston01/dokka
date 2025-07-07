@@ -41,16 +41,11 @@ jobs:
 
       - name: Verify documentation
         run: |
-          [ -d docs/dokka ] || (echo "ERROR: docs/dokka missing" && exit 1)
-          [ -f docs/dokka/index.html ] || (echo "ERROR: index.html missing" && exit 1)
-
-      - name: Copy custom assets
-        run: |
-          mkdir -p docs/dokka/assets
-          cp -R docs/assets/* docs/dokka/assets/
+          [ -d docs ] || (echo "ERROR: docs/ missing" && exit 1)
+          [ -f docs/index.html ] || (echo "ERROR: docs/index.html missing" && exit 1)
 
       - name: Disable Jekyll
-        run: touch docs/dokka/.nojekyll
+        run: touch docs/.nojekyll
 
       - name: Deploy to GitHub Pages
         id: deployment
@@ -58,7 +53,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: docs/dokka
+          publish_dir: docs
           force_orphan: true
           keep_files: false
           commit_message: "docs: Update documentation via GitHub Actions"

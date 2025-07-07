@@ -98,7 +98,7 @@ dokka {
         html {
             suppressInheritedMembers.set(true)
             failOnWarning.set(true)
-            outputDirectory.set(rootDir.resolve("docs/dokka"))
+            outputDirectory.set(rootDir.resolve("docs"))
         }
     }
 

@@ -1,0 +1,10 @@
+/*
+ * Copyright 2014-2024 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
+ */
+
+:root {
+    /* Aquí se hace referencia al recurso de la imagen personalizada se considera el punto de partida el archivo generado en dokka/stiles/logo-styes.css (archivo custom) */
+    --dokka-logo-image-url: url('https://emma.io/wp-content/uploads/2020/11/isotipo-emma-2019-lightgreen-square.svg');
+    --dokka-logo-height: 36px;
+    --dokka-logo-width: 36px;
+}

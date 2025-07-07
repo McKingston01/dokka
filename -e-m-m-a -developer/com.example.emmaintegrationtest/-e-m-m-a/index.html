@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>EMMA</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<script type="text/javascript" src="../../../dokka-mermaid.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../../index.html">
+                    EMMA Developer
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":app/release">androidJvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":app/release"
+                                       data-filter=":app/release"/>
+                                <span class="checkbox--icon"></span>
+                                androidJvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    EMMA Developer
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="EMMA Developer::com.example.emmaintegrationtest/EMMA///PointingToDeclaration//1259010394">
+  <div class="breadcrumbs"><a href="../../../index.html">EMMA Developer</a><span class="delimiter">/</span><a href="../index.html">com.example.emmaintegrationtest</a><span class="delimiter">/</span><span class="current">EMMA</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>EMMA</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">EMMA</a></div><p class="paragraph">Core class for interacting with EMMA </p><p class="paragraph">Call startEMMASession within your main application class to start tracking events with EMMA</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-208823548%2FConstructors%2F1259010394" anchor-label="EMMA" id="-208823548%2FConstructors%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e-m-m-a.html"><span><span>EMMA</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-208823548%2FConstructors%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">private </span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Class constructor.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-387611081%2FClasslikes%2F1259010394" anchor-label="Configuration" id="-387611081%2FClasslikes%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-configuration/index.html"><span><span>Configuration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-387611081%2FClasslikes%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-configuration/index.html">Configuration</a></div><div class="brief ">Class Configuration.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1738117421%2FProperties%2F1259010394" anchor-label="EMMA_SESSION_KEY" id="1738117421%2FProperties%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e-m-m-a_-s-e-s-s-i-o-n_-k-e-y.html"><span>EMMA_</span><wbr></wbr><span>SESSION_</span><wbr></wbr><span>KEY</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1738117421%2FProperties%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">private </span><span class="token keyword">val </span><a href="-e-m-m-a_-s-e-s-s-i-o-n_-k-e-y.html">EMMA_SESSION_KEY</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator"> = </span><span class="token string">&quot;io.emma.SESSION_KEY&quot;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1799089656%2FProperties%2F1259010394" anchor-label="emmaController" id="-1799089656%2FProperties%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="emma-controller.html"><span>emma</span><wbr></wbr><span><span>Controller</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1799089656%2FProperties%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">private </span><span class="token keyword">open </span><span class="token keyword">var </span><a href="emma-controller.html">emmaController</a><span class="token operator">: </span><span data-unresolved-link="io.emma.android.controllers/EMMAController///PointingToDeclaration/">EMMAController</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="339430219%2FProperties%2F1259010394" anchor-label="INSTANCE" id="339430219%2FProperties%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-n-s-t-a-n-c-e.html"><span><span>INSTANCE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="339430219%2FProperties%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">private </span><span class="token keyword">open </span><span class="token keyword">var </span><a href="-i-n-s-t-a-n-c-e.html">INSTANCE</a><span class="token operator">: </span><a href="index.html">EMMA</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-651229916%2FProperties%2F1259010394" anchor-label="lastLoad" id="-651229916%2FProperties%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="last-load.html"><span>last</span><wbr></wbr><span><span>Load</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-651229916%2FProperties%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">private </span><span class="token keyword">open </span><span class="token keyword">var </span><a href="last-load.html">lastLoad</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/app/Activity.html">Activity</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-164470179%2FFunctions%2F1259010394" anchor-label="addBatchNativeAdListener" id="-164470179%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-batch-native-ad-listener.html"><span>add</span><wbr></wbr><span>Batch</span><wbr></wbr><span>Native</span><wbr></wbr><span>Ad</span><wbr></wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-164470179%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="add-batch-native-ad-listener.html"><span class="token function">addBatchNativeAdListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMABatchNativeAdInterface///PointingToDeclaration/">EMMABatchNativeAdInterface</span><span class="token punctuation">, </span></span><span class="parameter ">templateId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1405741504%2FFunctions%2F1259010394" anchor-label="addCouponsCallback" id="-1405741504%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-coupons-callback.html"><span>add</span><wbr></wbr><span>Coupons</span><wbr></wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1405741504%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="add-coupons-callback.html"><span class="token function">addCouponsCallback</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">callback<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMACouponsInterface///PointingToDeclaration/">EMMACouponsInterface</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1236512109%2FFunctions%2F1259010394" anchor-label="addInAppMessageListener" id="-1236512109%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-in-app-message-listener.html"><span>add</span><wbr></wbr><span>In</span><wbr></wbr><span>App</span><wbr></wbr><span>Message</span><wbr></wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1236512109%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="add-in-app-message-listener.html"><span class="token function">addInAppMessageListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMAInAppMessageInterface///PointingToDeclaration/">EMMAInAppMessageInterface</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-55893693%2FFunctions%2F1259010394" anchor-label="addInAppPlugins" id="-55893693%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-in-app-plugins.html"><span>add</span><wbr></wbr><span>In</span><wbr></wbr><span>App</span><wbr></wbr><span><span>Plugins</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-55893693%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="add-in-app-plugins.html"><span class="token function">addInAppPlugins</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">plugins<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span data-unresolved-link="io.emma.android.plugins/EMMAInAppPlugin///PointingToDeclaration/">EMMAInAppPlugin</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief ">Add custom plugins to manage inapp formats through nativeAd power.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1933244825%2FFunctions%2F1259010394" anchor-label="addNativeAdListener" id="-1933244825%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-native-ad-listener.html"><span>add</span><wbr></wbr><span>Native</span><wbr></wbr><span>Ad</span><wbr></wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1933244825%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="add-native-ad-listener.html"><span class="token function">addNativeAdListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMANativeAdInterface///PointingToDeclaration/">EMMANativeAdInterface</span><span class="token punctuation">, </span></span><span class="parameter ">templateId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1706896715%2FFunctions%2F1259010394" anchor-label="addProduct" id="-1706896715%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-product.html"><span>add</span><wbr></wbr><span><span>Product</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1706896715%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="add-product.html"><span class="token function">addProduct</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">productId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">name<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">qty<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">price<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="add-product.html"><span class="token function">addProduct</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">productId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">name<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">qty<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">price<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">extras<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="121158765%2FFunctions%2F1259010394" anchor-label="addPushToken" id="121158765%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-push-token.html"><span>add</span><wbr></wbr><span>Push</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="121158765%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="add-push-token.html"><span class="token function">addPushToken</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">token<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">pushType<span class="token operator">: </span><span data-unresolved-link="io.emma.android.enums/EMMAPushType///PointingToDeclaration/">EMMAPushType</span></span></span><span class="token punctuation">)</span></div><div class="brief ">Adds to EMMA the custom push token.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="670661069%2FFunctions%2F1259010394" anchor-label="areNotificationsEnabled" id="670661069%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="are-notifications-enabled.html"><span>are</span><wbr></wbr><span>Notifications</span><wbr></wbr><span><span>Enabled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="670661069%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="are-notifications-enabled.html"><span class="token function">areNotificationsEnabled</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief ">This method returns if notifications are enabled or disabled.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-634240810%2FFunctions%2F1259010394" anchor-label="cancelInAppMessage" id="-634240810%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cancel-in-app-message.html"><span>cancel</span><wbr></wbr><span>In</span><wbr></wbr><span>App</span><wbr></wbr><span><span>Message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-634240810%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="cancel-in-app-message.html"><span class="token function">cancelInAppMessage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">messageId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief ">Cancel specific InAppMessage previously invoked</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1653479905%2FFunctions%2F1259010394" anchor-label="cancelOrder" id="1653479905%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cancel-order.html"><span>cancel</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1653479905%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="cancel-order.html"><span class="token function">cancelOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief ">Cancel the previus order sent to EMMA.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-461340201%2FFunctions%2F1259010394" anchor-label="checkConfig" id="-461340201%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="check-config.html"><span>check</span><wbr></wbr><span><span>Config</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-461340201%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">private </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="check-config.html"><span class="token function">checkConfig</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configuration<span class="token operator">: </span><a href="-configuration/index.html">EMMA.Configuration</a></span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if EMMA configuration has the correct params.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1671024923%2FFunctions%2F1259010394" anchor-label="checkDelegateMethods" id="1671024923%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="check-delegate-methods.html"><span>check</span><wbr></wbr><span>Delegate</span><wbr></wbr><span><span>Methods</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1671024923%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="check-delegate-methods.html"><span class="token function">checkDelegateMethods</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="947764802%2FFunctions%2F1259010394" anchor-label="checkForRichPushUrl" id="947764802%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="check-for-rich-push-url.html"><span>check</span><wbr></wbr><span>For</span><wbr></wbr><span>Rich</span><wbr></wbr><span>Push</span><wbr></wbr><span><span>Url</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="947764802%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="check-for-rich-push-url.html"><span class="token function">checkForRichPushUrl</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-178242371%2FFunctions%2F1259010394" anchor-label="closeInAppMessage" id="-178242371%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="close-in-app-message.html"><span>close</span><wbr></wbr><span>In</span><wbr></wbr><span>App</span><wbr></wbr><span><span>Message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-178242371%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="close-in-app-message.html"><span class="token function">closeInAppMessage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">type<span class="token operator">: </span><span data-unresolved-link="io.emma.android.model/EMMACampaign.Type///PointingToDeclaration/">EMMACampaign.Type</span></span></span><span class="token punctuation">)</span></div><div class="brief ">This method closes inapp communication that is being displayed on the screen.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1771298502%2FFunctions%2F1259010394" anchor-label="disableTrackingLocation" id="1771298502%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="disable-tracking-location.html"><span>disable</span><wbr></wbr><span>Tracking</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1771298502%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="disable-tracking-location.html"><span class="token function">disableTrackingLocation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Disable the tracking location.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2004283434%2FFunctions%2F1259010394" anchor-label="disableUserTracking" id="2004283434%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="disable-user-tracking.html"><span>disable</span><wbr></wbr><span>User</span><wbr></wbr><span><span>Tracking</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2004283434%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="disable-user-tracking.html"><span class="token function">disableUserTracking</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">deleteUser<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div><div class="brief ">This method disables all the communication between SDK and EMMA</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="187964763%2FFunctions%2F1259010394" anchor-label="enableUserTracking" id="187964763%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enable-user-tracking.html"><span>enable</span><wbr></wbr><span>User</span><wbr></wbr><span><span>Tracking</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="187964763%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="enable-user-tracking.html"><span class="token function">enableUserTracking</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">This method enables communication between SDK and EMMA on previously disabled user.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-785290363%2FFunctions%2F1259010394" anchor-label="getApplicationContext" id="-785290363%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-application-context.html"><span>get</span><wbr></wbr><span>Application</span><wbr></wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-785290363%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-application-context.html"><span class="token function">getApplicationContext</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-880095190%2FFunctions%2F1259010394" anchor-label="getDeviceId" id="-880095190%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-device-id.html"><span>get</span><wbr></wbr><span>Device</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-880095190%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-device-id.html"><span class="token function">getDeviceId</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></div><br><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-device-id.html"><span class="token function">getDeviceId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">deviceIdListener<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMADeviceIdListener///PointingToDeclaration/">EMMADeviceIdListener</span></span></span><span class="token punctuation">)</span></div><div class="brief ">This method gets the id associate with the device.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-844470559%2FFunctions%2F1259010394" anchor-label="getInAppListeners" id="-844470559%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-in-app-listeners.html"><span>get</span><wbr></wbr><span>In</span><wbr></wbr><span>App</span><wbr></wbr><span><span>Listeners</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-844470559%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-in-app-listeners.html"><span class="token function">getInAppListeners</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Set.html">Set</a><span class="token operator">&lt;</span><span data-unresolved-link="io.emma.android.interfaces/EMMAInAppMessageInterface///PointingToDeclaration/">EMMAInAppMessageInterface</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-669431156%2FFunctions%2F1259010394" anchor-label="getInAppMessage" id="-669431156%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-in-app-message.html"><span>get</span><wbr></wbr><span>In</span><wbr></wbr><span>App</span><wbr></wbr><span><span>Message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-669431156%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-in-app-message.html"><span class="token function">getInAppMessage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation builtin">NonNull</span></a> </span>params<span class="token operator">: </span><span data-unresolved-link="io.emma.android.model/EMMAInAppRequest///PointingToDeclaration/">EMMAInAppRequest</span></span></span><span class="token punctuation">)</span></div><div class="brief ">Request a new in-app message providing a custom EMMAInAppRequest  Startview Example: <div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">
+
+EMMAInAppRequest inappRequest = new EMMAInAppRequest(EMMACampaign.Type.STARTVIEW);
+EMMA.getInAppMessage(inAppRequest);
+</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-in-app-message.html"><span class="token function">getInAppMessage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation builtin">NonNull</span></a> </span>requestParams<span class="token operator">: </span><span data-unresolved-link="io.emma.android.model/EMMAInAppRequest///PointingToDeclaration/">EMMAInAppRequest</span><span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMAInAppMessageInterface///PointingToDeclaration/">EMMAInAppMessageInterface</span></span></span><span class="token punctuation">)</span></div><div class="brief ">Request a new in-app message providing a custom EMMAInAppRequest  Startview Example: <div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">
+
+EMMAInAppRequest inappRequest = new EMMAInAppRequest(EMMACampaign.Type.STARTVIEW);
+EMMA.getInAppMessage(inAppRequest, this);
+</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="473491620%2FFunctions%2F1259010394" anchor-label="getInstallAttributionInfo" id="473491620%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-install-attribution-info.html"><span>get</span><wbr></wbr><span>Install</span><wbr></wbr><span>Attribution</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="473491620%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-install-attribution-info.html"><span class="token function">getInstallAttributionInfo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation builtin">NonNull</span></a> </span>attributionInfoInterface<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMAInstallAttributionInterface///PointingToDeclaration/">EMMAInstallAttributionInterface</span></span></span><span class="token punctuation">)</span></div><div class="brief ">This method gets the install attribution info.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="222733999%2FFunctions%2F1259010394" anchor-label="getInstance" id="222733999%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-instance.html"><span>get</span><wbr></wbr><span><span>Instance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="222733999%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-instance.html"><span class="token function">getInstance</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">EMMA</a></div><div class="brief ">Returns ths runtime object associated with current</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1744887959%2FFunctions%2F1259010394" anchor-label="getLastRetargetingClickKey" id="1744887959%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-last-retargeting-click-key.html"><span>get</span><wbr></wbr><span>Last</span><wbr></wbr><span>Retargeting</span><wbr></wbr><span>Click</span><wbr></wbr><span><span>Key</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1744887959%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-last-retargeting-click-key.html"><span class="token function">getLastRetargetingClickKey</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></div><div class="brief ">This method gets the last click key associated with the rt attribution.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-622751605%2FFunctions%2F1259010394" anchor-label="getNotificationInfo" id="-622751605%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-notification-info.html"><span>get</span><wbr></wbr><span>Notification</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-622751605%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-notification-info.html"><span class="token function">getNotificationInfo</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1197917033%2FFunctions%2F1259010394" anchor-label="getPushToken" id="-1197917033%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-push-token.html"><span>get</span><wbr></wbr><span>Push</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1197917033%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-push-token.html"><span class="token function">getPushToken</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1042698800%2FFunctions%2F1259010394" anchor-label="getSDKBuild" id="-1042698800%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-s-d-k-build.html"><span>get</span><wbr></wbr><span><span>SDKBuild</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1042698800%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-s-d-k-build.html"><span class="token function">getSDKBuild</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief ">Gets the current SDK build.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1617537434%2FFunctions%2F1259010394" anchor-label="getSDKVersion" id="-1617537434%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-s-d-k-version.html"><span>get</span><wbr></wbr><span><span>SDKVersion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1617537434%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-s-d-k-version.html"><span class="token function">getSDKVersion</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></div><div class="brief ">Gets the current SDK version.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2006282242%2FFunctions%2F1259010394" anchor-label="getUserID" id="-2006282242%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-user-i-d.html"><span>get</span><wbr></wbr><span>User</span><wbr></wbr><span><span>ID</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2006282242%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-user-i-d.html"><span class="token function">getUserID</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Gets the user identifier added previously in login and register call.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1429434539%2FFunctions%2F1259010394" anchor-label="getUserInfo" id="1429434539%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-user-info.html"><span>get</span><wbr></wbr><span>User</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1429434539%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-user-info.html"><span class="token function">getUserInfo</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="342958569%2FFunctions%2F1259010394" anchor-label="getUUID" id="342958569%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-u-u-i-d.html"><span>get</span><wbr></wbr><span><span>UUID</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="342958569%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-u-u-i-d.html"><span class="token function">getUUID</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></div><div class="brief ">Gets the device UUID.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-97635064%2FFunctions%2F1259010394" anchor-label="getWebServiceURL" id="-97635064%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-web-service-u-r-l.html"><span>get</span><wbr></wbr><span>Web</span><wbr></wbr><span>Service</span><wbr></wbr><span><span>URL</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-97635064%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-web-service-u-r-l.html"><span class="token function">getWebServiceURL</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></div><div class="brief ">Gets the current web services url.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2064222129%2FFunctions%2F1259010394" anchor-label="getWhitelist" id="-2064222129%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-whitelist.html"><span>get</span><wbr></wbr><span><span>Whitelist</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2064222129%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-whitelist.html"><span class="token function">getWhitelist</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></div><div class="brief ">Get the urls previously added in setWhitelist method.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="436891504%2FFunctions%2F1259010394" anchor-label="handleLink" id="436891504%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="handle-link.html"><span>handle</span><wbr></wbr><span><span>Link</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="436891504%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="handle-link.html"><span class="token function">handleLink</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">uri<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/net/Uri.html">Uri</a></span></span><span class="token punctuation">)</span></div><div class="brief ">This method decouples the handleLink from the deeplink activity and allows it to be added to any part of the app that processes the deeplink opening.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1276310993%2FFunctions%2F1259010394" anchor-label="isSdkStarted" id="-1276310993%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-sdk-started.html"><span>is</span><wbr></wbr><span>Sdk</span><wbr></wbr><span><span>Started</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1276310993%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="is-sdk-started.html"><span class="token function">isSdkStarted</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1976659973%2FFunctions%2F1259010394" anchor-label="isUserTrackingEnabled" id="1976659973%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-user-tracking-enabled.html"><span>is</span><wbr></wbr><span>User</span><wbr></wbr><span>Tracking</span><wbr></wbr><span><span>Enabled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1976659973%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="is-user-tracking-enabled.html"><span class="token function">isUserTrackingEnabled</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/Boolean.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1778261185%2FFunctions%2F1259010394" anchor-label="loginUser" id="1778261185%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="login-user.html"><span>login</span><wbr></wbr><span><span>User</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1778261185%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="login-user.html"><span class="token function">loginUser</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">userId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">mail<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="login-user.html"><span class="token function">loginUser</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">userId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">mail<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">extras<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1403400935%2FFunctions%2F1259010394" anchor-label="onNewNotification" id="-1403400935%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-new-notification.html"><span>on</span><wbr></wbr><span>New</span><wbr></wbr><span><span>Notification</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1403400935%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="on-new-notification.html"><span class="token function">onNewNotification</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">intent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Intent.html">Intent</a><span class="token punctuation">, </span></span><span class="parameter ">checkForRichPush<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="426871640%2FFunctions%2F1259010394" anchor-label="openNativeAd" id="426871640%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="open-native-ad.html"><span>open</span><wbr></wbr><span>Native</span><wbr></wbr><span><span>Ad</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="426871640%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="open-native-ad.html"><span class="token function">openNativeAd</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">nativeAd<span class="token operator">: </span><span data-unresolved-link="io.emma.android.model/EMMANativeAd///PointingToDeclaration/">EMMANativeAd</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-662794087%2FFunctions%2F1259010394" anchor-label="registerUser" id="-662794087%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="register-user.html"><span>register</span><wbr></wbr><span><span>User</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-662794087%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="register-user.html"><span class="token function">registerUser</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation builtin">NonNull</span></a> </span>userId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">mail<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="register-user.html"><span class="token function">registerUser</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation builtin">NonNull</span></a> </span>userId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">mail<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">extras<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1546469592%2FFunctions%2F1259010394" anchor-label="removeBatchNativeAdListenenr" id="-1546469592%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remove-batch-native-ad-listenenr.html"><span>remove</span><wbr></wbr><span>Batch</span><wbr></wbr><span>Native</span><wbr></wbr><span>Ad</span><wbr></wbr><span><span>Listenenr</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1546469592%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="remove-batch-native-ad-listenenr.html"><span class="token function">removeBatchNativeAdListenenr</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMABatchNativeAdInterface///PointingToDeclaration/">EMMABatchNativeAdInterface</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="747969718%2FFunctions%2F1259010394" anchor-label="removeInAppMessageListener" id="747969718%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remove-in-app-message-listener.html"><span>remove</span><wbr></wbr><span>In</span><wbr></wbr><span>App</span><wbr></wbr><span>Message</span><wbr></wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="747969718%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="remove-in-app-message-listener.html"><span class="token function">removeInAppMessageListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMAInAppMessageInterface///PointingToDeclaration/">EMMAInAppMessageInterface</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1551461782%2FFunctions%2F1259010394" anchor-label="removeNativeAdListener" id="1551461782%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remove-native-ad-listener.html"><span>remove</span><wbr></wbr><span>Native</span><wbr></wbr><span>Ad</span><wbr></wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1551461782%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="remove-native-ad-listener.html"><span class="token function">removeNativeAdListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMANativeAdInterface///PointingToDeclaration/">EMMANativeAdInterface</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-8008503%2FFunctions%2F1259010394" anchor-label="requestNotificationPermission" id="-8008503%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="request-notification-permission.html"><span>request</span><wbr></wbr><span>Notification</span><wbr></wbr><span><span>Permission</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-8008503%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="request-notification-permission.html"><span class="token function">requestNotificationPermission</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="request-notification-permission.html"><span class="token function">requestNotificationPermission</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">permissionInterface<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMAPermissionInterface///PointingToDeclaration/">EMMAPermissionInterface</span></span></span><span class="token punctuation">)</span></div><div class="brief ">On Android 13 shows the system notification permission prompt to enable displaying notifications.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1449178709%2FFunctions%2F1259010394" anchor-label="reset" id="-1449178709%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="reset.html"><span><span>reset</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1449178709%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="reset.html"><span class="token function">reset</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-458652159%2FFunctions%2F1259010394" anchor-label="sendInAppClick" id="-458652159%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="send-in-app-click.html"><span>send</span><wbr></wbr><span>In</span><wbr></wbr><span>App</span><wbr></wbr><span><span>Click</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-458652159%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="send-in-app-click.html"><span class="token function">sendInAppClick</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">type<span class="token operator">: </span><span data-unresolved-link="io.emma.android.enums/CommunicationTypes///PointingToDeclaration/">CommunicationTypes</span><span class="token punctuation">, </span></span><span class="parameter ">campaign<span class="token operator">: </span><span data-unresolved-link="io.emma.android.model/EMMACampaign///PointingToDeclaration/">EMMACampaign</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1859943718%2FFunctions%2F1259010394" anchor-label="sendInAppDismissedClick" id="1859943718%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="send-in-app-dismissed-click.html"><span>send</span><wbr></wbr><span>In</span><wbr></wbr><span>App</span><wbr></wbr><span>Dismissed</span><wbr></wbr><span><span>Click</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1859943718%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="send-in-app-dismissed-click.html"><span class="token function">sendInAppDismissedClick</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">type<span class="token operator">: </span><span data-unresolved-link="io.emma.android.enums/CommunicationTypes///PointingToDeclaration/">CommunicationTypes</span><span class="token punctuation">, </span></span><span class="parameter ">campaign<span class="token operator">: </span><span data-unresolved-link="io.emma.android.model/EMMACampaign///PointingToDeclaration/">EMMACampaign</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1385116496%2FFunctions%2F1259010394" anchor-label="sendInAppImpression" id="1385116496%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="send-in-app-impression.html"><span>send</span><wbr></wbr><span>In</span><wbr></wbr><span>App</span><wbr></wbr><span><span>Impression</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1385116496%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="send-in-app-impression.html"><span class="token function">sendInAppImpression</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">type<span class="token operator">: </span><span data-unresolved-link="io.emma.android.enums/CommunicationTypes///PointingToDeclaration/">CommunicationTypes</span><span class="token punctuation">, </span></span><span class="parameter ">campaign<span class="token operator">: </span><span data-unresolved-link="io.emma.android.model/EMMACampaign///PointingToDeclaration/">EMMACampaign</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="849570282%2FFunctions%2F1259010394" anchor-label="setBannerParams" id="849570282%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-banner-params.html"><span>set</span><wbr></wbr><span>Banner</span><wbr></wbr><span><span>Params</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="849570282%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="set-banner-params.html"><span class="token function">setBannerParams</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">bannerParams<span class="token operator">: </span><span data-unresolved-link="io.emma.android.model/EMMABannerParams///PointingToDeclaration/">EMMABannerParams</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="630628351%2FFunctions%2F1259010394" anchor-label="setCurrentActivity" id="630628351%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-current-activity.html"><span>set</span><wbr></wbr><span>Current</span><wbr></wbr><span><span>Activity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="630628351%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="set-current-activity.html"><span class="token function">setCurrentActivity</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">activity<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/app/Activity.html">Activity</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-170023974%2FFunctions%2F1259010394" anchor-label="setCustomerId" id="-170023974%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-customer-id.html"><span>set</span><wbr></wbr><span>Customer</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-170023974%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="set-customer-id.html"><span class="token function">setCustomerId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">customerId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief ">This method associates a customerId with the device.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-14344252%2FFunctions%2F1259010394" anchor-label="setDebuggerOutput" id="-14344252%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-debugger-output.html"><span>set</span><wbr></wbr><span>Debugger</span><wbr></wbr><span><span>Output</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-14344252%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="set-debugger-output.html"><span class="token function">setDebuggerOutput</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">activate<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2063706334%2FFunctions%2F1259010394" anchor-label="setPowlinkDomains" id="2063706334%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-powlink-domains.html"><span>set</span><wbr></wbr><span>Powlink</span><wbr></wbr><span><span>Domains</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2063706334%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="set-powlink-domains.html"><span class="token function">setPowlinkDomains</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">domains<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1420620400%2FFunctions%2F1259010394" anchor-label="setShortPowlinkDomains" id="-1420620400%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-short-powlink-domains.html"><span>set</span><wbr></wbr><span>Short</span><wbr></wbr><span>Powlink</span><wbr></wbr><span><span>Domains</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1420620400%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="set-short-powlink-domains.html"><span class="token function">setShortPowlinkDomains</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">domains<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1778855504%2FFunctions%2F1259010394" anchor-label="setUserLanguage" id="-1778855504%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-user-language.html"><span>set</span><wbr></wbr><span>User</span><wbr></wbr><span><span>Language</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1778855504%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="set-user-language.html"><span class="token function">setUserLanguage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">language<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief ">Sets the user preferred language manually.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-207440113%2FFunctions%2F1259010394" anchor-label="setWebServiceUrl" id="-207440113%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-web-service-url.html"><span>set</span><wbr></wbr><span>Web</span><wbr></wbr><span>Service</span><wbr></wbr><span><span>Url</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-207440113%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="set-web-service-url.html"><span class="token function">setWebServiceUrl</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">webServiceURL<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief ">Sets the current web services url.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2065143968%2FFunctions%2F1259010394" anchor-label="setWhitelist" id="-2065143968%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-whitelist.html"><span>set</span><wbr></wbr><span><span>Whitelist</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2065143968%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="set-whitelist.html"><span class="token function">setWhitelist</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">urls<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief ">Use setWhitelist to restrict urls that can be opened for SDK in-app communications By default all urls are permited.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1027759582%2FFunctions%2F1259010394" anchor-label="startEMMAController" id="1027759582%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="start-e-m-m-a-controller.html"><span>start</span><wbr></wbr><span><span>EMMAController</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1027759582%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">private </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-e-m-m-a-controller.html"><span class="token function">startEMMAController</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configuration<span class="token operator">: </span><a href="-configuration/index.html">EMMA.Configuration</a><span class="token punctuation">, </span></span><span class="parameter ">sessionStartListener<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMASessionStartListener///PointingToDeclaration/">EMMASessionStartListener</span><span class="token punctuation">, </span></span><span class="parameter ">backgroundSession<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-610716097%2FFunctions%2F1259010394" anchor-label="startOrder" id="-610716097%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="start-order.html"><span>start</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-610716097%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-order.html"><span class="token function">startOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">totalPrice<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-order.html"><span class="token function">startOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">totalPrice<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">extras<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-order.html"><span class="token function">startOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">customerId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">totalPrice<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-order.html"><span class="token function">startOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">customerId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">totalPrice<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">extras<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><br><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-order.html"><span class="token function">startOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">customerId<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">totalPrice<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">coupon<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">extras<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief ">Start the ordering process.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1463309945%2FFunctions%2F1259010394" anchor-label="startPushSystem" id="1463309945%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="start-push-system.html"><span>start</span><wbr></wbr><span>Push</span><wbr></wbr><span><span>System</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1463309945%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-push-system.html"><span class="token function">startPushSystem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">pushOptions<span class="token operator">: </span><span data-unresolved-link="io.emma.android.model/EMMAPushOptions///PointingToDeclaration/">EMMAPushOptions</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-355783782%2FFunctions%2F1259010394" anchor-label="startSession" id="-355783782%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="start-session.html"><span>start</span><wbr></wbr><span><span>Session</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-355783782%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-session.html"><span class="token function">startSession</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">application<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/app/Application.html">Application</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-session.html"><span class="token function">startSession</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">application<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/app/Application.html">Application</a><span class="token punctuation">, </span></span><span class="parameter ">sessionStartListener<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMASessionStartListener///PointingToDeclaration/">EMMASessionStartListener</span></span></span><span class="token punctuation">)</span></div><div class="brief ">Starts the communication with EMMA Servers.</div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-session.html"><span class="token function">startSession</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configuration<span class="token operator">: </span><a href="-configuration/index.html">EMMA.Configuration</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-session.html"><span class="token function">startSession</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configuration<span class="token operator">: </span><a href="-configuration/index.html">EMMA.Configuration</a><span class="token punctuation">, </span></span><span class="parameter ">sessionStartListener<span class="token operator">: </span><span data-unresolved-link="io.emma.android.interfaces/EMMASessionStartListener///PointingToDeclaration/">EMMASessionStartListener</span></span></span><span class="token punctuation">)</span></div><div class="brief ">Starts the communication with EMMA Servers with a new EMMA configuration.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-974593467%2FFunctions%2F1259010394" anchor-label="startSessionBackground" id="-974593467%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="start-session-background.html"><span>start</span><wbr></wbr><span>Session</span><wbr></wbr><span><span>Background</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-974593467%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-session-background.html"><span class="token function">startSessionBackground</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configuration<span class="token operator">: </span><a href="-configuration/index.html">EMMA.Configuration</a></span></span><span class="token punctuation">)</span></div><div class="brief ">Starts basic session without notifying installs and session events.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1135947316%2FFunctions%2F1259010394" anchor-label="startTrackingLocation" id="-1135947316%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="start-tracking-location.html"><span>start</span><wbr></wbr><span>Tracking</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1135947316%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="start-tracking-location.html"><span class="token function">startTrackingLocation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Starts the tracking location in SDK.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="440675904%2FFunctions%2F1259010394" anchor-label="syncWithSdkWeb" id="440675904%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="sync-with-sdk-web.html"><span>sync</span><wbr></wbr><span>With</span><wbr></wbr><span>Sdk</span><wbr></wbr><span><span>Web</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="440675904%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="sync-with-sdk-web.html"><span class="token function">syncWithSdkWeb</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">url<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-851597614%2FFunctions%2F1259010394" anchor-label="trackEvent" id="-851597614%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="track-event.html"><span>track</span><wbr></wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-851597614%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="track-event.html"><span class="token function">trackEvent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation builtin">NonNull</span></a> </span>eventRequest<span class="token operator">: </span><span data-unresolved-link="io.emma.android.model/EMMAEventRequest///PointingToDeclaration/">EMMAEventRequest</span></span></span><span class="token punctuation">)</span></div><div class="brief ">Request a event message providing a custom EMMAEventRequest <div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">
+
+EMMAEventRequest eventRequest = new EMMAEventRequest(&quot;token&quot;);
+EMMA.trackEvent(eventRequest);
+</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1938621648%2FFunctions%2F1259010394" anchor-label="trackExtraUserInfo" id="-1938621648%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="track-extra-user-info.html"><span>track</span><wbr></wbr><span>Extra</span><wbr></wbr><span>User</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1938621648%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="track-extra-user-info.html"><span class="token function">trackExtraUserInfo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">info<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token punctuation">, </span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1661627933%2FFunctions%2F1259010394" anchor-label="trackOrder" id="1661627933%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="track-order.html"><span>track</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1661627933%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="track-order.html"><span class="token function">trackOrder</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Finish the ordering process sending the order to EMMA.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1026009136%2FFunctions%2F1259010394" anchor-label="trackScreenEvents" id="-1026009136%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="track-screen-events.html"><span>track</span><wbr></wbr><span>Screen</span><wbr></wbr><span><span>Events</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1026009136%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="track-screen-events.html"><span class="token function">trackScreenEvents</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">screenEvents<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1924568421%2FFunctions%2F1259010394" anchor-label="unregisterPushService" id="-1924568421%2FFunctions%2F1259010394" data-filterable-set=":app/release"></a>
+          <div class="table-row" data-filterable-current=":app/release" data-filterable-set=":app/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="unregister-push-service.html"><span>unregister</span><wbr></wbr><span>Push</span><wbr></wbr><span><span>Service</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1924568421%2FFunctions%2F1259010394"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="unregister-push-service.html"><span class="token function">unregisterPushService</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>2025 © EMMA by Arkana Apps</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

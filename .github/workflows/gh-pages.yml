@@ -41,24 +41,24 @@ jobs:
 
       - name: Verify documentation
         run: |
-          [ -d build/dokka/output ] || (echo "ERROR: Docs directory missing" && exit 1)
-          [ -f build/dokka/output/index.html ] || (echo "ERROR: Index file missing" && exit 1)
+          [ -d docs/dokka ] || (echo "ERROR: docs/dokka missing" && exit 1)
+          [ -f docs/dokka/index.html ] || (echo "ERROR: index.html missing" && exit 1)
 
       - name: Copy custom assets
         run: |
-          mkdir -p build/dokka/output/assets
-          cp -R docs/assets/* build/dokka/output/assets/
+          mkdir -p docs/dokka/assets
+          cp -R docs/assets/* docs/dokka/assets/
 
       - name: Disable Jekyll
-        run: touch build/dokka/output/.nojekyll
+        run: touch docs/dokka/.nojekyll
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/dokka/output
-          publish_branch: gh-pages    # crea/actualiza esta rama
+          publish_branch: gh-pages
+          publish_dir: docs/dokka
           force_orphan: true
           keep_files: false
           commit_message: "docs: Update documentation via GitHub Actions"
